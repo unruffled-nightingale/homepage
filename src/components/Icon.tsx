@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import linkedinLight from '../assets/linkedin-light2.png'
-import linkedinDark from '../assets/linkedin-dark2.png'
-import githubDark from '../assets/github-dark3.png'
-import githubLight from '../assets/github-light2.png'
+import linkedinLight from '../assets/linkedin-light.png'
+import linkedinDark from '../assets/linkedin-dark.png'
+import githubDark from '../assets/github-dark.png'
+import githubLight from '../assets/github-light.png'
 
 import React, {useState} from "react";
 
@@ -16,8 +16,9 @@ const IconDiv = styled.div<IconImgProps>`
   display: inline-block;
   position: relative;
   cursor: pointer;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 0px;
+  padding-right: 10px;
+  margin-bottom: -1px;
 `
 
 
