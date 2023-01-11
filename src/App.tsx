@@ -1,10 +1,15 @@
 import { ReactNode, useState } from 'react';
 import styled from 'styled-components'
+import World from "./components/Ball/World";
+import Controls from "./components/Ball/Controls/Controls";
 import { Category } from "./components/Category";
+import { Mobile } from "./components/Mobile";
+import { useMovement } from "./components/Ball/useMovement";
 import { PROJECTS_DATA } from "./components/Projects/ProjectsData";
 import { PROJECTS } from "./components/Projects/Projects";
 import { ProjectsT } from './components/Projects/types';
 import { ExperienceT } from './components/Experience/types';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 import { GitHubIcon, LinkedInIcon } from "./components/Icon";
 import { ArticleList } from "./components/Articles/ArticleList";
@@ -16,6 +21,8 @@ const AppContainer = styled.div`
   font-family: 'Noto Sans Mono', monospace;
   font-size: 0.8em;
   font-weight: 100;
+  width: 100%;
+  height: 100%;
 
 `
 
@@ -52,6 +59,13 @@ const Overview = styled.div`
   position: absolute;
 `
 
+const BallControls = styled.p`
+  font-size: 
+`
+
+const MobileContent = styled.p`
+`
+
 
 export type CategoryT = "PROJECTS" | "ARTICLES" | "EXPERIENCE" | "BALL" | undefined
 
@@ -69,44 +83,60 @@ const PROJECT_LIST: OverviewT[] = PROJECTS_DATA.map(e => e.name)
 
 function App() {
 
-    const [category, setCategory] = useState<CategoryT>()
-    const [overview, setOverview] = useState<OverviewT>()
+  const [category, setCategory] = useState<CategoryT>()
+  const [overview, setOverview] = useState<OverviewT>()
 
-    const onCategoryClick = (name: CategoryT) => {
-      return () => {
-            if (name === category) return
-            setCategory(name)
-            setOverview(undefined)
-        }
+  const [loaded, setLoaded] = useState(false);
+  const [started, setStarted] = useState(false);
+  const [movement, setMovement, moved] = useMovement();
+
+  const onCategoryClick = (name: CategoryT) => {
+    return () => {
+      if (name === category) return
+      setCategory(name)
+      setOverview(undefined)
+      if (name === "BALL") setStarted(true)
     }
+  }
 
-    return (
+  return (
+    <>
+      <MobileView>
+        <Mobile/>
+      </MobileView>
+      <BrowserView style={{height: "100%"}}>
         <AppContainer>
-            <SideBar>
-                <Header>
-                    <Title>Robert Manteghi</Title>
-                    <Icons>
-                        <LinkedInIcon url={LINKEDIN_URL} size={"16px"} />
-                        <GitHubIcon url={GITHUB_URL} size={"15px"} />
-                    </Icons>
-                </Header>
-                <Category onClick={onCategoryClick("PROJECTS")} category={"PROJECTS"} onFocus={category === "PROJECTS"}>
-                    <CategoryList categories={PROJECT_LIST} overview={overview} setOverview={setOverview} />
-                </Category>
-                <Category onClick={onCategoryClick("EXPERIENCE")} category={"EXPERIENCE"} onFocus={category === "EXPERIENCE"}>
-                    <CategoryList categories={EXPERIENCE_LIST} overview={overview} setOverview={setOverview} />
-                </Category>
-                <Category onClick={onCategoryClick("ARTICLES")} category={"ARTICLES"} onFocus={category === "ARTICLES"}>
-                    <ArticleList />
-                </Category>
-                <Category onClick={onCategoryClick("BALL")} category={"BALL"} onFocus={category === "BALL"}>
-                </Category>
-            </SideBar>
-            <Overview>
-                {overview && OVERVIEWS[overview]}
-            </Overview>
+          <Controls setMovement={setMovement} />
+          <World movement={movement} started={started} setLoaded={setLoaded} />
+          <SideBar>
+            <Header>
+              <Title>Robert Manteghi</Title>
+              <Icons>
+                <LinkedInIcon url={LINKEDIN_URL} size={"16px"} />
+                <GitHubIcon url={GITHUB_URL} size={"15px"} />
+              </Icons>
+            </Header>
+            <Category onClick={onCategoryClick("PROJECTS")} category={"PROJECTS"} onFocus={category === "PROJECTS"}>
+              <CategoryList categories={PROJECT_LIST} overview={overview} setOverview={setOverview} />
+            </Category>
+            <Category onClick={onCategoryClick("EXPERIENCE")} category={"EXPERIENCE"} onFocus={category === "EXPERIENCE"}>
+              <CategoryList categories={EXPERIENCE_LIST} overview={overview} setOverview={setOverview} />
+            </Category>
+            <Category onClick={onCategoryClick("ARTICLES")} category={"ARTICLES"} onFocus={category === "ARTICLES"}>
+              <ArticleList />
+            </Category>
+            <Category onClick={onCategoryClick("BALL")} category={"BALL"} onFocus={category === "BALL"}>
+              <BallControls>Use <b>W A S D</b> to move</BallControls>
+
+            </Category>
+          </SideBar>
+          <Overview>
+            {overview && OVERVIEWS[overview]}
+          </Overview>
         </AppContainer>
-    );
+      </BrowserView>
+    </>
+  );
 }
 
 export default App;

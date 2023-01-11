@@ -1,7 +1,8 @@
 import emojiCanvas from '../../assets/emoji-canvas.gif'
+import esr from '../../assets/esr-demo.gif'
 import kino from '../../assets/kino.gif'
 import tracklift from '../../assets/tracklift.gif'
-import rollingGallery from '../../assets/emoji-canvas.gif'
+import rollingGallery from '../../assets/rolling-gallery.gif'
 import everydle from '../../assets/everydle.png'
 
 import { ProjectsDataT } from './types'
@@ -114,7 +115,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
     },
     {
         name: "EVENT_STREAM_REGISTRY",
-        src: undefined,
+        src: esr,
         desc: EVENT_STREAM_REGISTRY_DESC,
         githubUrl: "https://github.com/unruffled-nightingale/event-stream-registry-ui",
         url: "https://unruffled-nightingale.github.io/event-stream-registry-ui/",

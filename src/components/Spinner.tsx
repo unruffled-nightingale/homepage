@@ -3,20 +3,25 @@ import styled from 'styled-components'
 
 
 export const Spinner = styled.div`
+  z-index: -1;
   position: absolute;
-  left: 50%;
-  top: 10%;
+  left: 40%;
+  top: 15%;
   transform: translateX(-100%); 
   display: inline-block;
   width: 50px;
   height: 50px;
-  border: 3px solid red;
+  border: 3px solid grey;
   border-radius: 50%;
-  border-top-color: #fff;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+
   @keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
-  }
-  @-webkit-keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `

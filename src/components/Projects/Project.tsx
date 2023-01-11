@@ -76,6 +76,7 @@ export const Project = ({ name, desc, githubUrl, url, src, platforms }: Projects
       {src ?
       <GifContainer>
         <Gif src={src} alt={name} />
+        <Spinner/>
         </GifContainer> : <><br/></>
       }
       <ProjectTitle url={url} onClick={onTitleClick}>{name}</ProjectTitle>
