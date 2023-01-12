@@ -1,15 +1,17 @@
 import { CompanyDataT } from "./types"
 
-export const BABYLON_DESCRIPTION = `Construction of tooling to maintain, manage, and simplify the construction of event streams in Babylon. How many topics and how many streams.tion of tooling to maintain, manage, and simplify the construction of event streams in Babylon. How many topics and how many streams.
-Lead developer of Babylon’s Population Health explorer that enables non-technical user to query and provide population level insights of Babylon’s health data.
+export const BABYLON_DESCRIPTION = `
+Maintained and developed Babylon Health's event streaming platform, growing it to a platform consisting of over 12,000 topics, across 13 clusters, processing half a billion records a day.
+Lead developer for the Population Health Explorer that empowers non-technical users to query and analyse Babylon Health's data, enabling population-level health insights.
+Implemented tooling to simplify utilisation and promote adoption of event streaming.
+Lead developer for the Flow Builder enabling non-technical users to construct data pipelines for ingesting, transforming and exporting data within Babylon Health.
+Managed a team overseeing projects and providing guidance for personal development.
 
-Lead developer of Babylon’s Flow Builder that allows non-technical users to construct data pipelines to ingest, transform, and export data within Babylon’s data ecosystem.
-Open-sourced the Event Stream Registry (see PROJECTS)
 `
 
 export const EXPERIAN_DESCRIPTION = `Responsible for the recalculation of the UK’s largest business database. 
-Lead the improvement and development of data recalculation, refactoring the existing monolithic framework to decoupled stream processes.
-Lead developer of Experian’s event streaming platform which allows users to connect APIs through the wider Experian business through the automated deployment of monitored event streams.
+Led the improvement and development of data recalculation, refactoring the existing monolithic framework to decoupled stream processes.
+Lead developer of Experian’s event streaming platform, allowing users to connect APIs within the wider Experian business through pipelines. 
 `
 
 export const COMPANY_DATA: CompanyDataT[] = [

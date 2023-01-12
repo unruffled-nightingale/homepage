@@ -8,55 +8,41 @@ import everydle from '../../assets/everydle.png'
 import { ProjectsDataT } from './types'
 
 export const KINO_DESC = `
-A web application that exhibits trailers for recommended films that are available to stream on Amazon, YouTube, iTunes and GooglePlay. 
+Co-creator of Kino, an application that exhibits trailers of critically acclaimed films and enables users to filter by rating, language, genre, release date, and runtime.
 
-The backend utilises a Python Django Rest API framework to serve the website. Kafka and Python are used in an event stream framework to collect data from a number of public APIs. 
+The backend utilises Python's Django Rest API framework. Kafka and Python are used in the collection of data from a number of public APIs. 
 
-The web application, backend API, and data collection event stream are deployed to Digital Ocean’s cloud infrastructure using Docker, Kubernetes and Jenkins.
-Version 2 aims to implement graph databases (Neo4J) and machine learning clustering algorithms to provide further recommendations and tailored suggestions based on user ratings.
+The web application, backend API, and data pipelines are deployed to Digital Ocean’s cloud infrastructure using Docker, Kubernetes and Jenkins.
+
+Next I plan to improve the quality of the data, and introduce user accounts and ratings. With the ratings data I would like to explore the use of a graph database (Neo4J) and machine learning clustering algorithms to provide personalized recommendations.
 `
 
 export const EVENT_STREAM_REGISTRY_DESC = `
-A React component for observing and monitoring event streams.
+An open source event streaming platform built on top of Kubernetes, Kafka, Strimzi, Fission.io, Confluent Schema Registry, Grafana, Prometheus and Kowl.
+Building upon an open-sourced tool developed by the Babylon Health team, this project aims to leverage the existing open-source tooling to create a control plane for deploying 
+services and topics within a cluster.
+
+This system allows users to create functions that specify input and output criteria, as well as configuration parameters. These functions can be utilized to
+ create APIs, scheduled tasks, and stream processors, which can be managed through the control plane's UI or Kubernetes CRD.
 
 See more for more information in ARTICLES.
 `
 
 export const FASTAPI_TEMPLATE_DESC = `A template for building a production ready API using the best current technology, approaches and standards for a backend API in 2022.
 
-The starter application provides 'out the box':
+THe API web starter application (using FastAPI) includes "out the box":
 
-* An API web application (using FastAPI's web framework), which includes:
-    * OpenAPI documentation endpoint - /docs
-    * Health Check endpoint - /health
+* OpenAPI documentation endpoint - /docs
 
-* Tests
-    * Unit (using pytest and Coverage.py)
-    * Integration (using pytest, test-containers, and Docker)
-    * Acceptance (using pytest)
-    * Load (using Locust)
+* Health Check endpoint - /health
 
-* Code style checks
-    * Linting (using Flake8)
-    * Formatting (using black and isort)
-    * Static type checking (using mypy)
+* Test framework for unit (pytest), integration (pytest, test-containers, docker), and scheduled acceptance and load tests (pytest, Locust, GitHub Actions)
 
-* CI-CD
-    * All tests, security, and code-style checks run on all pull requests to 'main' branch (using GitHub Actions)
-    * Automatic pushing of Docker image on push to 'main' branch (using GitHub Actions and GitHub Container Registry)
-    * Automatic deployment to kubernetes using (using GitHub Actions)
-    * Schedules acceptance tests to run daily
-
-* Other
-    * Pre-commit hooks that run unit tests, checks security and code-style checks, and prevents merging to 'main'
-    * Pull Request templating to encourage high quality Pull Requests
-    * A Makefile that contains all available functionality in the repository
+* A GitHub Actions deployment pipeline that checks linting, formatting, static type checking, test.
 `
 
 export const ROLLING_GALLERY_DESC = `
-A react application, implementing react-three-fiber, to construct a three-dimensional land that can explored by the user through he character of a wandering ball.
-
-The purpose of this project is to demonstrate how art can be shown and explored in other mediums. 
+A 3D React application, using react-three-fiber, to explore ideas how art can be shown and explored in other mediums.
 
 Further iterations of this work will look to further construct the landscape to make full use of the three-dimensional space, and introduce elements of VR through the use of the react-three/xr library. 
 
@@ -66,13 +52,14 @@ The application is deployed to Digital Ocean’s cloud infrastructure using Dock
 export const EVERYDLE_DESC = `
 A simple react application that shows variants of the popular online game Wordle. 
 
-Further iterations will introduce searchable tags to allow users to easily discover and explore the many Wordle variants. 
+The application is deployed to Digital Ocean’s cloud infrastructure using Docker and Kubernetes. 
 `
 
 export const TRACKLIFT_DESC = `
 A command lint tool for exporting playlists from NTS or BBC Sounds to Spotify.  
 
-To make the tool more accessible, the next iteration will implement Kivy to construct a cross platform mobile application. 
+Next steps are to add add subscriptions to channels to avoid having to run the application manually. Further iteration, would
+be to create a Kivy cross mobile application to make the tool more accessible. 
 `
 
 export const PYTHON_TEMPLATE_DESC = ` 

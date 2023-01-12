@@ -66,10 +66,11 @@ export const Overview = () => {
                 </SkillBlock>
                 <SkillTitle>TOOLING</SkillTitle>
                 <SkillBlock>
-                    <SkillSubTitle>DEPLOYMENT</SkillSubTitle>
+                    <SkillSubTitle>CLOUD</SkillSubTitle>
                     <SkillItem>Kubernetes</SkillItem>
                     <SkillItem>Docker</SkillItem>
                     <SkillItem>AWS</SkillItem>
+                    <SkillItem>GCP</SkillItem>
                     <SkillItem>Digital Ocean</SkillItem>
                 </SkillBlock>
                 <SkillBlock>
