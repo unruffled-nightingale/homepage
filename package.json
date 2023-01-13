@@ -1,6 +1,7 @@
 {
   "name": "robert-manteghi",
   "version": "0.1.0",
+  "homepage": "https://unruffled-nightingale.github.io",
   "private": true,
   "dependencies": {
     "@react-three/cannon": "^5.1.0",
@@ -13,18 +14,19 @@
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.6",
-    "typescript": "^4.8.4",
-    "web-vitals": "^2.1.4",
     "cross-var": "^1.1.0",
     "dotenv-cli": "^6.0.0",
+    "gh-pages": "^4.0.0",
+    "react": "^18.2.0",
     "react-device-detect": "^2.2.2",
+    "react-dom": "^18.2.0",
     "react-joystick-component": "^4.0.1",
+    "react-scripts": "5.0.1",
     "recoil": "^0.6.1",
-    "three": "^0.139.0"
+    "styled-components": "^5.3.6",
+    "three": "^0.139.0",
+    "typescript": "^4.8.4",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,7 +38,9 @@
     "docker:tag": "yarn run docker:build; dotenv cross-var docker tag homepage %DOCKER_REGISTRY%/homepage:latest",
     "docker:push": "yarn run docker:tag; dotenv cross-var docker push %DOCKER_REGISTRY%/homepage:latest",
     "kube:apply": "yarn run docker:push; kubectl apply -f ./kube/deployment.yaml",
-    "kube:redeploy": "yarn run docker:push; kubectl rollout restart deploy homepage"
+    "kube:redeploy": "yarn run docker:push; kubectl rollout restart deploy homepage",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
