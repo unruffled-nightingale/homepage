@@ -1,0 +1,23 @@
+apiVersion: apps/v1 # for versions before 1.6.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: homepage
+  namespace: default
+  labels:
+    app: homepage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homepage
+  template:
+    metadata:
+      labels:
+        app: homepage
+    spec:
+      containers:
+        - name: homepage
+          image: unrufflednightingale/homepage:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
