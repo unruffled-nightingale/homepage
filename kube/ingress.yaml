@@ -9,7 +9,7 @@ metadata:
 spec:
   tls:
     - hosts:
-        - homepage.unruffled-nightingale.com
+        - www.unruffled-nightingale.com
       secretName: homepage-tls
   rules:
     - host: www.unruffled-nightingale.com
