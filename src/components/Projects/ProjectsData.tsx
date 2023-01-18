@@ -4,6 +4,8 @@ import kino from '../../assets/kino.gif'
 import tracklift from '../../assets/tracklift.gif'
 import rollingGallery from '../../assets/rolling-gallery.gif'
 import everydle from '../../assets/everydle.png'
+import treasureHunt from '../../assets/treasure-hunt.gif'
+import wallpaper from '../../assets/wallpaper.jpeg'
 
 import { ProjectsDataT } from './types'
 
@@ -19,10 +21,11 @@ Next I plan to improve the quality of the data, and introduce user accounts and 
 
 export const EVENT_STREAM_REGISTRY_DESC = `
 An open source event streaming platform built on top of Kubernetes, Kafka, Strimzi, Fission.io, Confluent Schema Registry, Grafana, Prometheus and Kowl.
-Building upon an open-sourced tool developed by the Babylon Health team, this project aims to leverage the existing open-source tooling to create a control plane for deploying 
+
+Building upon an open-sourced tool developed by the Babylon Health team, this project aims to leverage existing open-source tooling to create a control plane for deploying 
 services and topics within a cluster.
 
-This system allows users to create functions that specify input and output criteria, as well as configuration parameters. These functions can be utilized to
+This application allows users to create functions that specify input and output criteria, as well as configuration parameters. These functions can be utilized to
  create APIs, scheduled tasks, and stream processors, which can be managed through the control plane's UI or Kubernetes CRD.
 
 See more for more information in ARTICLES.
@@ -43,8 +46,6 @@ THe API web starter application (using FastAPI) includes "out the box":
 
 export const ROLLING_GALLERY_DESC = `
 A 3D React application, using react-three-fiber, to explore ideas how art can be shown and explored in other mediums.
-
-Further iterations of this work will look to further construct the landscape to make full use of the three-dimensional space, and introduce elements of VR through the use of the react-three/xr library. 
 
 The application is deployed to Digital Ocean’s cloud infrastructure using Docker and Kubernetes. 
 `
@@ -91,6 +92,22 @@ A web application that allows users to build, edit and save artistic creations m
 The application is deployed to Digital Ocean’s cloud infrastructure using Docker and Kubernetes. 
 `
 
+export const WALLPAPER_DESC = `
+A Python application that helps you learn a language by updating your desktop background daily. 
+
+Utilizing a combination of public APIs for translation, verb extraction, and conjugation, this application updates your desktop background daily, displaying a phrase or quote in your 
+target language, along with the present, future, and imperfect conjugations of the extracted verb.
+`
+
+export const TREASURE_HUNT_APPLICATION_DESC = `A React application for designing and building custom treasure hunts.
+
+Utilizing a data-driven approach, users can easily define clues, prizes, and styling using JSON.
+The application also features an interactive map displaying clue locations and user progress.
+
+The application is deployed to Digital Ocean’s cloud infrastructure using Docker and Kubernetes.
+`
+
+
 
 export const PROJECTS_DATA: ProjectsDataT[] = [
     {
@@ -101,7 +118,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Desktop"]
     },
     {
-        name: "EVENT_STREAM_REGISTRY",
+        name: "EVENT_STREAM_REGISTRY (WIP)",
         src: esr,
         desc: EVENT_STREAM_REGISTRY_DESC,
         githubUrl: "https://github.com/unruffled-nightingale/event-stream-registry-ui",
@@ -113,7 +130,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         src: undefined,
         desc: FASTAPI_TEMPLATE_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
-        url: undefined,
+        url: "https://www.github.com/unruffled-nightingale/fastapi-template",
         platforms: []
     },
     {
@@ -129,7 +146,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         src: tracklift,
         desc: TRACKLIFT_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/tracklift",
-        url: undefined,
+        url: "https://www.github.com/unruffled-nightingale/tracklift",
         platforms: []
     },
     {
@@ -137,7 +154,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         src: undefined,
         desc: PYTHON_TEMPLATE_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/python-template",
-        url: undefined,
+        url: "https://www.github.com/unruffled-nightingale/python-template",
         platforms: []
     },
     {
@@ -147,6 +164,22 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
         url: "https://emojiart.unruffled-nightingale.com",
         platforms: ["Desktop"]
+    },
+    {
+        name: "TREASURE_HUNT_APPLICATION",
+        src: treasureHunt,
+        desc: TREASURE_HUNT_APPLICATION_DESC,
+        githubUrl: "https://www.github.com/unruffled-nightingale/treasure_hunt",
+        url: "https://treasure-hunt-demo.unruffled-nightingale.com",
+        platforms: ["Mobile"]
+    },
+    {
+        name: "LANGUAGE_WALLPAPER",
+        src: wallpaper,
+        desc: WALLPAPER_DESC,
+        githubUrl: "https://www.github.com/unruffled-nightingale/language_wallpaper",
+        url: "https://www.github.com/unruffled-nightingale/language_wallpaper",
+        platforms: []
     },
     {
         name: "EVERYDLE",

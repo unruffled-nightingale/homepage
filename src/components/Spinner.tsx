@@ -1,12 +1,15 @@
 import styled from 'styled-components'
 
 
+type SpinnerProps = {
+  left: string
+}
 
-export const Spinner = styled.div`
+export const Spinner = styled.div<SpinnerProps>`
   z-index: -1;
   position: absolute;
-  left: 40%;
-  top: 15%;
+  left: ${props => props.left};
+  top: 10%;
   transform: translateX(-100%); 
   display: inline-block;
   width: 50px;

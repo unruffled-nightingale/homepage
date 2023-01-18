@@ -60,12 +60,21 @@ const Overview = styled.div`
 `
 
 const BallControls = styled.p`
-  font-size: 
 `
 
-const MobileContent = styled.p`
-`
 
+const DownloadCv = styled.a`
+    position: relative;
+    top: -2px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 0.8em;
+    text-decoration: none;
+    &:hover {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+`
 
 export type CategoryT = "PROJECTS" | "ARTICLES" | "EXPERIENCE" | "BALL" | undefined
 
@@ -99,6 +108,7 @@ function App() {
     }
   }
 
+  
   return (
     <>
       <MobileView>
@@ -121,13 +131,14 @@ function App() {
             </Category>
             <Category onClick={onCategoryClick("EXPERIENCE")} category={"EXPERIENCE"} onFocus={category === "EXPERIENCE"}>
               <CategoryList categories={EXPERIENCE_LIST} overview={overview} setOverview={setOverview} />
+              <DownloadCv href='/assets/CV - Robert Manteghi.pdf' download>DOWNLOAD CV</DownloadCv>
+
             </Category>
             <Category onClick={onCategoryClick("ARTICLES")} category={"ARTICLES"} onFocus={category === "ARTICLES"}>
               <ArticleList />
             </Category>
             <Category onClick={onCategoryClick("BALL")} category={"BALL"} onFocus={category === "BALL"}>
               <BallControls>Use <b>W A S D</b> to move</BallControls>
-
             </Category>
           </SideBar>
           <Overview>

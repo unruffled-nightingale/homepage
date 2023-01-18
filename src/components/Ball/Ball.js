@@ -8,9 +8,7 @@ import { useRef } from 'react';
 function Ball({ movement }) {
 
   const counter = useRef(0);
-  const ballPosRef = useRef([0, 16, 0])
-  let x;
-  let z;
+  const ballPosRef = useRef([10, 16, 0])
   const { moveForward, moveBackward, moveLeft, moveRight } = movement;
   const colorMap = useTexture('assets/ball6.png');
 
@@ -27,9 +25,6 @@ function Ball({ movement }) {
     counter.current++
     api.applyImpulse([(moveForward - moveBackward), 0, (moveRight - moveLeft)], [0, 0, 0])
     api.position.subscribe(p => ballPosRef.current = p)
-    x = ballPosRef.current[0]
-    z = ballPosRef.current[2]
-
   })
 
   return (

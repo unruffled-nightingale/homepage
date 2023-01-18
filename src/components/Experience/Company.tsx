@@ -43,7 +43,7 @@ export const Company = ({ name, dates, position, description, url }: CompanyData
       <CompanyTitle url={url} onClick={onTitleClick}>{name}</CompanyTitle>
       <Dates>{dates}</Dates>
       <Position>{position.toUpperCase()}</Position>
-      {description && description.split("\n").map(e => <Description>{e}</Description>)}
+      {description && description.split("\n").map((e, i) => <Description key={i}>{e}</Description>)}
     </>
   )
 }
