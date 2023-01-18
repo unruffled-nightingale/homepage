@@ -8,6 +8,7 @@ export const PROJECTS: Record<ProjectsT, ReactNode> =
     PROJECTS_DATA.reduce((obj, item)=> { 
         obj[item.name] = 
             <Project 
+                key={item.name}
                 src={item.src} 
                 name={item.name} 
                 desc={item.desc}  

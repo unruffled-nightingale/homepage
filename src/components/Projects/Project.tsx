@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { GitHubIcon } from "../Icon";
 import { Spinner } from "../Spinner";
@@ -13,7 +14,12 @@ const GifContainer = styled.div`
   margin-bottom:30px;
 `
 
-const Gif = styled.img`
+type GifProps = {
+  visible?: boolean
+}
+
+const Gif = styled.img<GifProps>`
+  opacity: ${props => props.visible ? 1 : 0};
   max-height: 100%;
   max-width: 100%;
   z-index: 100;
@@ -67,16 +73,27 @@ const Platform = styled.p`
 
 export const Project = ({ name, desc, githubUrl, url, src, platforms }: ProjectsDataT) => {
 
+  const [videoVisible, setVideoVisible] = useState<boolean>(false)
+
   const onTitleClick = () => {
     if (url) window.open(url, "_blank")
+  }
+
+  useEffect(() => {
+    setVideoVisible(false)
+  }, [githubUrl])
+
+  const onGifLoaded = () => {
+    console.log("gif loaded")
+    setVideoVisible(true)
   }
 
   return (
     <>
       {src ?
       <GifContainer>
-        <Gif src={src} alt={name} />
-        <Spinner/>
+        <Gif src={src} alt={name} visible={videoVisible} onLoad={onGifLoaded}/>
+        <Spinner left={name.startsWith("TREASURE") ? "8%" : "40%"}/>
         </GifContainer> : <><br/></>
       }
       <ProjectTitle url={url} onClick={onTitleClick}>{name}</ProjectTitle>
@@ -89,10 +106,10 @@ export const Project = ({ name, desc, githubUrl, url, src, platforms }: Projects
       }
       {  
         platforms.length > 0 &&
-        <PlatformContainer>{platforms.map(p => <Platform>{p.toUpperCase()}</Platform>)}</PlatformContainer>
+        <PlatformContainer>{platforms.map((p, i) => <Platform key={i}>{p.toUpperCase()}</Platform>)}</PlatformContainer>
       }
       </div>
-      {<DescriptionContainer>{desc.split("\n\n").map(e => <Description>{e}</Description>)}</DescriptionContainer>
+      {<DescriptionContainer>{desc.split("\n\n").map((e, i) => <Description key={i}>{e}</Description>)}</DescriptionContainer>
 }
     </>
   )

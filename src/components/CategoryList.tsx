@@ -18,17 +18,18 @@ type CategoryListProps = {
     setOverview: (x: OverviewT) => void
 }
 
+
 export const CategoryList = ({ categories, overview, setOverview }: CategoryListProps) => {
     return (
         <>
             {
                 categories.map(c =>
                     <CategoryTitle
+                        key={c}
                         bold={overview === c} 
                         onClick={() => setOverview(c)}>{c}</CategoryTitle>
                 )
             }
-
         </>
     )
 }

@@ -3,16 +3,17 @@ import styled from "styled-components";
 type ProjectTitleProps = {
     bold?: boolean
 }
-const ArticleTitle = styled.h5<ProjectTitleProps>`
+const ArticleTitle = styled.p<ProjectTitleProps>`
   cursor: pointer;
   width: 200px;
-  font-weight: ${props => props.bold ? "bold" : undefined};
-  color: #007bff;
+  font-size: 0.8em;
+  color: blue;
   &:hover {
     font-weight: bold;
     text-decoration: underline;
   }
 `
+
 const openWindow = (url: string) => () => window.open(url, "_blank")
 
 export const ArticleList = () => {
