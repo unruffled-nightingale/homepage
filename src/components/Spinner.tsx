@@ -9,7 +9,7 @@ export const Spinner = styled.div<SpinnerProps>`
   z-index: -1;
   position: absolute;
   left: ${props => props.left};
-  top: 10%;
+  top: 5%;
   transform: translateX(-100%); 
   display: inline-block;
   width: 50px;
