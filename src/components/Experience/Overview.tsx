@@ -41,10 +41,6 @@ export const Overview = () => {
             <br/>
                 A lead full-stack software engineer believing clean architecture and
                 simple design build the most powerful and extensible platforms.
-                <br/>
-                <br/>
-                Strong believer that test driven development, continuous integration, daily deployments 
-                and good quality observability are the steps to an easier life.
             </Intro>
             <Skills>
                 <SkillTitle>LANGUAGES</SkillTitle>
