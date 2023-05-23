@@ -6,7 +6,7 @@ type CategoryTitleProps = {
   bold: boolean
 }
 
-const CategoryTitle = styled.span<CategoryTitleProps>`
+export const CategoryTitle = styled.span<CategoryTitleProps>`
   cursor: pointer;
   font-weight: ${props => props.bold ? "bold" : undefined};
   &:hover {
@@ -23,7 +23,9 @@ const CategoryContainer = styled.div`
   margin-left: 3px;
 `
 
-const CategoryElements = styled.div``
+const CategoryElements = styled.div`
+  width: 500%;
+`
 
 
 type CategoryProps = {

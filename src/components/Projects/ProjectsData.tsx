@@ -1,10 +1,10 @@
-import emojiCanvas from '../../assets/emoji-canvas.gif'
-import esr from '../../assets/esr-demo.gif'
-import kino from '../../assets/kino.gif'
-import tracklift from '../../assets/tracklift.gif'
-import rollingGallery from '../../assets/rolling-gallery.gif'
+import emojiCanvas from '../../assets/emoji-canvas.webp'
+import esr from '../../assets/esr-demo.webp'
+import kino from '../../assets/kino.webp'
+import tracklift from '../../assets/tracklift.webp'
+import rollingGallery from '../../assets/rolling-gallery.webp'
 import everydle from '../../assets/everydle.png'
-import treasureHunt from '../../assets/treasure-hunt.gif'
+import treasureHunt from '../../assets/treasure-hunt.webp'
 import wallpaper from '../../assets/wallpaper.jpeg'
 
 import { ProjectsDataT } from './types'
@@ -28,20 +28,42 @@ services and topics within a cluster.
 This application allows users to create functions that specify input and output criteria, as well as configuration parameters. These functions can be utilized to
  create APIs, scheduled tasks, and stream processors, which can be managed through the control plane's UI or Kubernetes CRD.
 
-See more for more information in ARTICLES.
+See ARTICLES for more information.
 `
 
-export const FASTAPI_TEMPLATE_DESC = `A template for building a production ready API using the best current technology, approaches and standards for a backend API in 2022.
+export const FASTAPI_TEMPLATE_DESC = `A template for building a production ready API using the best current technology, approaches and standards for a backend API.
 
-THe API web starter application (using FastAPI) includes "out the box":
+THe API web starter application is build on FastAPI and includes "out the box":
 
-* OpenAPI documentation endpoint - /docs
 
-* Health Check endpoint - /health
+ENDPOINTS 
 
-* Test framework for unit (pytest), integration (pytest, test-containers, docker), and scheduled acceptance and load tests (pytest, Locust, GitHub Actions)
+* OpenAPI documentation endpoint - /docs
 
-* A GitHub Actions deployment pipeline that checks linting, formatting, static type checking, test.
+* Health Check endpoint - /health
+
+
+TESTS 
+
+* Unit tests (using pytest and Coverage.py)
+
+* Integration tests (using pytest, test-containers, and Docker)
+
+* Acceptance tests (using pytest, and GitHub Actions)
+
+
+CODE STYLE CHECKS 
+
+* Linting (using Flake8)
+
+* Formatting (using black and isort)
+
+* Static type checking (using mypy)
+
+
+CI-CD
+
+* All tests, security, and code-style checks run on all pull requests to 'main' branch (using GitHub Actions)
 `
 
 export const ROLLING_GALLERY_DESC = `
@@ -57,33 +79,46 @@ The application is deployed to Digital Ocean’s cloud infrastructure using Dock
 `
 
 export const TRACKLIFT_DESC = `
-A command lint tool for exporting playlists from NTS or BBC Sounds to Spotify.  
+A command line tool for exporting playlists from NTS or BBC Sounds to Spotify.  
 
 Next steps are to add add subscriptions to channels to avoid having to run the application manually. Further iteration, would
 be to create a Kivy cross mobile application to make the tool more accessible. 
 `
 
 export const PYTHON_TEMPLATE_DESC = ` 
-A template for building a python project using the best current technology, approaches and standards in 2022.
+A template for building a python project using the best current technology, approaches and standards.
 
 The template provides 'out the box':
 
-* Tests
-    * Unit (using pytest and Coverage.py)
-    * Integration (using pytest, test-containers, and Docker)
 
-* Code style checks
-    * Linting (using Flake8)
-    * Formatting (using black and isort)
-    * Static type checking (using mypy)
+TESTS 
 
-* CI-CD
-    * All tests, security, and code-style checks run on all pull requests to 'main' branch (using GitHub Actions)
+* Unit tests (using pytest and Coverage.py)
 
-* Other
-    * Pre-commit hooks that run unit tests, checks security and code-style checks, and prevents merging to 'main'
-    * Pull Request templating to encourage high quality Pull Requests
-    * A Makefile that contains all available functionality in the repos
+* Integration tests (using pytest, test-containers, and Docker)
+
+
+CODE STYLE CHECKS 
+
+* Linting (using Flake8)
+
+* Formatting (using black and isort)
+
+* Static type checking (using mypy)
+
+
+CI-CD
+
+* All tests, security, and code-style checks run on all pull requests to 'main' branch (using GitHub Actions)
+
+
+OTHER
+
+* Pre-commit hooks that run unit tests, checks security and code-style checks, and prevents merging to 'main'
+
+* Pull Request templating to encourage high quality Pull Requests
+
+* A Makefile that contains all available functionality in the repos
 `
 
 export const EMOJI_CANVAS_DESC = `
