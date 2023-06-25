@@ -5,6 +5,7 @@ import tracklift from '../../assets/tracklift.webp'
 import rollingGallery from '../../assets/rolling-gallery.webp'
 import everydle from '../../assets/everydle.png'
 import treasureHunt from '../../assets/treasure-hunt.webp'
+import bordle from '../../assets/bordle.webp'
 import wallpaper from '../../assets/wallpaper.jpeg'
 
 import { ProjectsDataT } from './types'
@@ -142,6 +143,13 @@ The application also features an interactive map displaying clue locations and u
 The application is deployed to Digital Ocean’s cloud infrastructure using Docker and Kubernetes.
 `
 
+export const BORDLE_DESC = `
+A web application that tests your knowledge of geography.
+
+Try and traverse the globe by crossing connected border. 
+
+The application is deployed to Digital Ocean’s cloud infrastructure using Docker and Kubernetes. 
+`
 
 
 export const PROJECTS_DATA: ProjectsDataT[] = [
@@ -167,6 +175,14 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
         url: "https://www.github.com/unruffled-nightingale/fastapi-template",
         platforms: []
+    },
+    {
+        name: "BORDLE",
+        src: bordle,
+        desc: BORDLE_DESC,
+        githubUrl: "https://www.github.com/unruffled-nightingale/bordle",
+        url: "https://bordle.unruffled-nightingale.com",
+        platforms: ["Desktop", "Mobile"]
     },
     {
         name: "ROLLING_GALLERY",

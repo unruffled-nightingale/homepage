@@ -94,7 +94,7 @@ export const Project = ({name, desc, githubUrl, url, src, platforms}: ProjectsDa
             {src ?
                 <GifContainer>
                     <Gif src={src} alt={name} visible={videoVisible} onLoad={onGifLoaded}/>
-                    <Spinner left={name.startsWith("TREASURE") ? "8%" : "40%"}/>
+                    <Spinner left={name.startsWith("TREA") || name.startsWith("BORD") ? "8%" : "40%"}/>
                 </GifContainer> : <><br/></>
             }
             <ProjectTitle url={url} onClick={onTitleClick}>{name}</ProjectTitle>
