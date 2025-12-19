@@ -6,7 +6,10 @@ type CategoryTitleProps = {
 }
 const CategoryTitle = styled.p<CategoryTitleProps>`
   cursor: pointer;
-  font-size: 0.8em;
+  margin: 0px;
+  margin-bottom: 10px;
+  letter-spacing: 0.3em;
+  font-size: 0.7em;
   font-weight: ${props => props.bold ? "bold" : undefined};
   &:hover {
     font-weight: bold;

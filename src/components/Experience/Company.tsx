@@ -8,9 +8,11 @@ type CompanyTitleProps = {
 }
 
 const CompanyTitle = styled.h1<CompanyTitleProps>`
-  margin-top: 0.5em;
+  font-family: 'Noto Serif JP', serif;
+  letter-spacing: 0.7em;
+  margin-top: 0px;
   display: inline-block;
-  font-size: 2em;
+  font-size: 1.5em;
   cursor: ${props => props.url !== undefined ? "pointer" : "auto"};
   color: ${props => props.url !== undefined ? "#007bff" : "black"};
   &:hover {
@@ -19,17 +21,31 @@ const CompanyTitle = styled.h1<CompanyTitleProps>`
   }
 `
 
-const Position = styled.h4`
+const PositionDatesRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 6px;
 `
 
+const Position = styled.h4`
+  margin: 0;
+  font-family: 'Noto Sans Mono', monospace;
+  letter-spacing: 0.6em;
+`
+
 const Dates = styled.p`
-  display: inline-block;
-  margin-left: 20px;
+  letter-spacing: 0.3em;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin: 0;
 `
 const Description = styled.p`
   margin-top: 18px;
   font-size: 0.8em;
+  text-align: justify;
+  font-size: 0.85em;
+  font-family: 'STIX Two Text', monospace;
 `
 
 export const Company = ({ name, dates, position, description, url }: CompanyDataT) => {
@@ -41,8 +57,10 @@ export const Company = ({ name, dates, position, description, url }: CompanyData
   return (
     <>
       <CompanyTitle url={url} onClick={onTitleClick}>{name}</CompanyTitle>
-      <Dates>{dates}</Dates>
-      <Position>{position.toUpperCase()}</Position>
+      <PositionDatesRow>
+        <Position>{position.toUpperCase()}</Position>
+        <Dates>{dates}</Dates>
+      </PositionDatesRow>
       {description && description.split("\n").map((e, i) => <Description key={i}>{e}</Description>)}
     </>
   )

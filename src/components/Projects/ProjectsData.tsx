@@ -6,7 +6,6 @@ import rollingGallery from '../../assets/rolling-gallery.webp'
 import everydle from '../../assets/everydle.png'
 import treasureHunt from '../../assets/treasure-hunt.webp'
 import bordle from '../../assets/bordle.webp'
-import wallpaper from '../../assets/wallpaper.jpeg'
 
 import { ProjectsDataT } from './types'
 
@@ -128,13 +127,6 @@ A web application that allows users to build, edit and save artistic creations m
 The application is deployed to Digital Ocean’s cloud infrastructure using Docker and Kubernetes. 
 `
 
-export const WALLPAPER_DESC = `
-A Python application that helps you learn a language by updating your desktop background daily. 
-
-Utilizing a combination of public APIs for translation, verb extraction, and conjugation, this application updates your desktop background daily, displaying a phrase or quote in your 
-target language, along with the present, future, and imperfect conjugations of the extracted verb.
-`
-
 export const TREASURE_HUNT_APPLICATION_DESC = `A React application for designing and building custom treasure hunts.
 
 Utilizing a data-driven approach, users can easily define clues, prizes, and styling using JSON.
@@ -156,12 +148,13 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
     {
         name: "KINO",
         src: kino,
+        videoSrc: "http://167.172.50.27/homepage/static/kino.mp4",
         desc: KINO_DESC,
         url: "https://kino.unruffled-nightingale.com",
         platforms: ["Desktop"]
     },
     {
-        name: "EVENT_STREAM_REGISTRY (WIP)",
+        name: "EVENT STREAM REGISTRY",
         src: esr,
         desc: EVENT_STREAM_REGISTRY_DESC,
         githubUrl: "https://github.com/unruffled-nightingale/event-stream-registry-ui",
@@ -169,12 +162,12 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Desktop"]
     },
     {
-        name: "FASTAPI_TEMPLATE",
-        src: undefined,
-        desc: FASTAPI_TEMPLATE_DESC,
-        githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
-        url: "https://www.github.com/unruffled-nightingale/fastapi-template",
-        platforms: []
+        name: "ROLLING GALLERY",
+        src: rollingGallery,
+        desc: ROLLING_GALLERY_DESC,
+        githubUrl: "https://www.github.com/unruffled-nightingale/rolling-gallery",
+        url: "https://simms.unruffled-nightingale.com",
+        platforms: ["Desktop", "Mobile"]
     },
     {
         name: "BORDLE",
@@ -182,14 +175,6 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         desc: BORDLE_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/bordle",
         url: "https://bordle.unruffled-nightingale.com",
-        platforms: ["Desktop", "Mobile"]
-    },
-    {
-        name: "ROLLING_GALLERY",
-        src: rollingGallery,
-        desc: ROLLING_GALLERY_DESC,
-        githubUrl: "https://www.github.com/unruffled-nightingale/rolling-gallery",
-        url: "https://simms.unruffled-nightingale.com",
         platforms: ["Desktop", "Mobile"]
     },
     {
@@ -201,15 +186,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: []
     },
     {
-        name: "PYTHON_TEMPLATE",
-        src: undefined,
-        desc: PYTHON_TEMPLATE_DESC,
-        githubUrl: "https://www.github.com/unruffled-nightingale/python-template",
-        url: "https://www.github.com/unruffled-nightingale/python-template",
-        platforms: []
-    },
-    {
-        name: "EMOJI_CANVAS",
+        name: "EMOJI CANVAS",
         src: emojiCanvas,
         desc: EMOJI_CANVAS_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
@@ -217,20 +194,12 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Desktop"]
     },
     {
-        name: "TREASURE_HUNT_APPLICATION",
+        name: "TREASURE HUNT",
         src: treasureHunt,
         desc: TREASURE_HUNT_APPLICATION_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/treasure_hunt",
         url: "https://treasure-hunt-demo.unruffled-nightingale.com",
         platforms: ["Mobile"]
-    },
-    {
-        name: "LANGUAGE_WALLPAPER",
-        src: wallpaper,
-        desc: WALLPAPER_DESC,
-        githubUrl: "https://www.github.com/unruffled-nightingale/language_wallpaper",
-        url: "https://www.github.com/unruffled-nightingale/language_wallpaper",
-        platforms: []
     },
     {
         name: "EVERYDLE",
@@ -239,5 +208,21 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         githubUrl: "https://www.github.com/unruffled-nightingale/everydle",
         url: "https://everydle.unruffled-nightingale.com",
         platforms: ["Desktop", "Mobile"]
+    },
+    {
+        name: "FASTAPI TEMPLATE",
+        src: undefined,
+        desc: FASTAPI_TEMPLATE_DESC,
+        githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
+        url: "https://www.github.com/unruffled-nightingale/fastapi-template",
+        platforms: []
+    },
+    {
+        name: "PYTHON TEMPLATE",
+        src: undefined,
+        desc: PYTHON_TEMPLATE_DESC,
+        githubUrl: "https://www.github.com/unruffled-nightingale/python-template",
+        url: "https://www.github.com/unruffled-nightingale/python-template",
+        platforms: []
     },
 ]

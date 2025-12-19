@@ -1,4 +1,4 @@
-export type ProjectsT = "KINO" | "BORDLE" | "EVENT_STREAM_REGISTRY (WIP)" | "FASTAPI_TEMPLATE" |  "ROLLING_GALLERY" | "EMOJI_CANVAS" | "LANGUAGE_WALLPAPER" | "EVERYDLE" | "TRACKLIFT" | "PYTHON_TEMPLATE" | "TREASURE_HUNT_APPLICATION"
+export type ProjectsT = "KINO" | "BORDLE" | "EVENT STREAM REGISTRY" | "FASTAPI TEMPLATE" |  "ROLLING GALLERY" | "EMOJI CANVAS" | "LANGUAGE WALLPAPER" | "EVERYDLE" | "TRACKLIFT" | "PYTHON TEMPLATE" | "TREASURE HUNT"
 
 export type ProjectsDataT = {
     name: ProjectsT, 
@@ -7,4 +7,5 @@ export type ProjectsDataT = {
     githubUrl?: string, 
     url?: string,
     src?: string
+    videoSrc?: string
 }

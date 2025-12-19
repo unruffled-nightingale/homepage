@@ -16,7 +16,7 @@ Lead developer of Experian’s event streaming platform, allowing users to conne
 
 export const COMPANY_DATA: CompanyDataT[] = [
   {
-    name: "BABYLON_HEALTH",
+    name: "BABYLON HEALTH",
     dates: "2018 - PRESENT",
     position: "Lead Software Engineer",
     description: BABYLON_DESCRIPTION,
