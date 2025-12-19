@@ -99,7 +99,8 @@ const Icon = styled.div`
 `
 
 const Description = styled.p`
-  font-size: 0.8em;
+  text-align: justify;
+  font-size: 0.85em;
   font-family: 'STIX Two Text', monospace;
 `
 

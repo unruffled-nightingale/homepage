@@ -43,6 +43,9 @@ const Dates = styled.p`
 const Description = styled.p`
   margin-top: 18px;
   font-size: 0.8em;
+  text-align: justify;
+  font-size: 0.85em;
+  font-family: 'STIX Two Text', monospace;
 `
 
 export const Company = ({ name, dates, position, description, url }: CompanyDataT) => {

@@ -95,7 +95,7 @@ function App() {
   const [overview, setOverview] = useState<OverviewT>()
 
   const [loaded, setLoaded] = useState(false);
-  const [started, setStarted] = useState(false);
+  const [started, setStarted] = useState(true);
   const [movement, setMovement, moved] = useMovement();
 
   const onCategoryClick = (name: CategoryT) => {

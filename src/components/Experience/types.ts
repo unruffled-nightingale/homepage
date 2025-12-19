@@ -1,4 +1,4 @@
-export type ExperienceT = "OVERVIEW" | "EXPERIAN" | "BABYLON_HEALTH" | "EDUCATION"
+export type ExperienceT = "OVERVIEW" | "EXPERIAN" | "BABYLON HEALTH" | "EDUCATION"
 
 export type CompanyDataT = {
     name: ExperienceT,

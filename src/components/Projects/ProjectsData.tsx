@@ -6,7 +6,6 @@ import rollingGallery from '../../assets/rolling-gallery.webp'
 import everydle from '../../assets/everydle.png'
 import treasureHunt from '../../assets/treasure-hunt.webp'
 import bordle from '../../assets/bordle.webp'
-import wallpaper from '../../assets/wallpaper.jpeg'
 
 import { ProjectsDataT } from './types'
 
@@ -128,13 +127,6 @@ A web application that allows users to build, edit and save artistic creations m
 The application is deployed to Digital Ocean’s cloud infrastructure using Docker and Kubernetes. 
 `
 
-export const WALLPAPER_DESC = `
-A Python application that helps you learn a language by updating your desktop background daily. 
-
-Utilizing a combination of public APIs for translation, verb extraction, and conjugation, this application updates your desktop background daily, displaying a phrase or quote in your 
-target language, along with the present, future, and imperfect conjugations of the extracted verb.
-`
-
 export const TREASURE_HUNT_APPLICATION_DESC = `A React application for designing and building custom treasure hunts.
 
 Utilizing a data-driven approach, users can easily define clues, prizes, and styling using JSON.
@@ -170,12 +162,12 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Desktop"]
     },
     {
-        name: "FASTAPI TEMPLATE",
-        src: undefined,
-        desc: FASTAPI_TEMPLATE_DESC,
-        githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
-        url: "https://www.github.com/unruffled-nightingale/fastapi-template",
-        platforms: []
+        name: "ROLLING GALLERY",
+        src: rollingGallery,
+        desc: ROLLING_GALLERY_DESC,
+        githubUrl: "https://www.github.com/unruffled-nightingale/rolling-gallery",
+        url: "https://simms.unruffled-nightingale.com",
+        platforms: ["Desktop", "Mobile"]
     },
     {
         name: "BORDLE",
@@ -186,27 +178,11 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Desktop", "Mobile"]
     },
     {
-        name: "ROLLING GALLERY",
-        src: rollingGallery,
-        desc: ROLLING_GALLERY_DESC,
-        githubUrl: "https://www.github.com/unruffled-nightingale/rolling-gallery",
-        url: "https://simms.unruffled-nightingale.com",
-        platforms: ["Desktop", "Mobile"]
-    },
-    {
         name: "TRACKLIFT",
         src: tracklift,
         desc: TRACKLIFT_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/tracklift",
         url: "https://www.github.com/unruffled-nightingale/tracklift",
-        platforms: []
-    },
-    {
-        name: "PYTHON TEMPLATE",
-        src: undefined,
-        desc: PYTHON_TEMPLATE_DESC,
-        githubUrl: "https://www.github.com/unruffled-nightingale/python-template",
-        url: "https://www.github.com/unruffled-nightingale/python-template",
         platforms: []
     },
     {
@@ -226,19 +202,27 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Mobile"]
     },
     {
-        name: "LANGUAGE WALLPAPER",
-        src: wallpaper,
-        desc: WALLPAPER_DESC,
-        githubUrl: "https://www.github.com/unruffled-nightingale/language_wallpaper",
-        url: "https://www.github.com/unruffled-nightingale/language_wallpaper",
-        platforms: []
-    },
-    {
         name: "EVERYDLE",
         src: everydle,
         desc: EVERYDLE_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/everydle",
         url: "https://everydle.unruffled-nightingale.com",
         platforms: ["Desktop", "Mobile"]
+    },
+    {
+        name: "FASTAPI TEMPLATE",
+        src: undefined,
+        desc: FASTAPI_TEMPLATE_DESC,
+        githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
+        url: "https://www.github.com/unruffled-nightingale/fastapi-template",
+        platforms: []
+    },
+    {
+        name: "PYTHON TEMPLATE",
+        src: undefined,
+        desc: PYTHON_TEMPLATE_DESC,
+        githubUrl: "https://www.github.com/unruffled-nightingale/python-template",
+        url: "https://www.github.com/unruffled-nightingale/python-template",
+        platforms: []
     },
 ]

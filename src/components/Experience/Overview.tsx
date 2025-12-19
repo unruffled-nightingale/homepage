@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 
 const Intro = styled.p`
-    margin-bottom: 36px;
+    margin-top: 0px;
     font-size: 0.8em;
+    font-family: 'STIX Two Text', monospace;
 `
 
 const Skills = styled.div`
@@ -11,24 +12,35 @@ const Skills = styled.div`
 
 const SkillBlock = styled.div`
   vertical-align: top;
-  display: inline-block;
-  width: 30%;
+  display: block;
+  width: 100%;
 `
 
 const SkillTitle = styled.h3`
-  margin-bottom: 12px;
-  margin-top: 36px;
-  font-size: 1em;
-  `
+  font-size: 0.8em;
+  font-family: 'Noto Sans Mono', monospace;
+  letter-spacing: 0.7em;
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+`
 
 const SkillSubTitle = styled.h3`
-font-size: 1em;
+ font-size: 0.8em;
+ display: inline-block;
+  font-family: 'Noto Sans Mono', monospace;
+  letter-spacing: 0.7em;
+  font-weight: normal;
+  margin: 0;
+  width: 40%
 `
 
 const SkillItem = styled.p`
     margin-top: 4px;
-    margin-bottom: 4px;
     font-size: 0.8em;
+    font-family: 'STIX Two Text', monospace;
+    display: inline-block;
+
+
 `
 
 
@@ -36,9 +48,6 @@ export const Overview = () => {
     return (
         <>
             <Intro>
-            <br/>
-            <br/>
-            <br/>
                 A lead full-stack software engineer believing clean architecture and
                 simple design build the most powerful and extensible platforms.
             </Intro>
@@ -46,15 +55,11 @@ export const Overview = () => {
                 <SkillTitle>LANGUAGES</SkillTitle>
                 <SkillBlock>
                     <SkillSubTitle>PYTHON</SkillSubTitle>
-                    <SkillItem>FastAPI</SkillItem>
-                    <SkillItem>Flask</SkillItem>
-                    <SkillItem>Django Rest Framework</SkillItem>
-                    <SkillItem>Faust.io</SkillItem>
+                    <SkillItem>FastAPI, Flask, Langraph, Django Rest Framework, Faust.io</SkillItem>
                 </SkillBlock>
                 <SkillBlock>
                     <SkillSubTitle>JAVA</SkillSubTitle>
-                    <SkillItem>Spring</SkillItem>
-                    <SkillItem>Kafka Streams</SkillItem>
+                    <SkillItem>Spring, Kafka Streams</SkillItem>
                 </SkillBlock>
                 <SkillBlock>
                     <SkillSubTitle>TYPESCRIPT</SkillSubTitle>
@@ -63,26 +68,15 @@ export const Overview = () => {
                 <SkillTitle>TOOLING</SkillTitle>
                 <SkillBlock>
                     <SkillSubTitle>CLOUD</SkillSubTitle>
-                    <SkillItem>Kubernetes</SkillItem>
-                    <SkillItem>Docker</SkillItem>
-                    <SkillItem>AWS</SkillItem>
-                    <SkillItem>GCP</SkillItem>
-                    <SkillItem>Digital Ocean</SkillItem>
+                    <SkillItem>AWS, GCP, Digital Ocean, Kubernetes, Docker</SkillItem>
                 </SkillBlock>
                 <SkillBlock>
                     <SkillSubTitle>DATASTORES</SkillSubTitle>
-                    <SkillItem>Kafka</SkillItem>
-                    <SkillItem>OpenSearch</SkillItem>
-                    <SkillItem>Postgres</SkillItem>
-                    <SkillItem>OracleDB</SkillItem>
-                    <SkillItem>Redis</SkillItem>
-                    <SkillItem>S3</SkillItem>
+                    <SkillItem>Kafka, Redshift, BigQuery, Postgres</SkillItem>
                 </SkillBlock>
                 <SkillBlock>
                     <SkillSubTitle>CI-CD</SkillSubTitle>
-                    <SkillItem>CircleCI</SkillItem>
-                    <SkillItem>Azure</SkillItem>
-                    <SkillItem>Github Actions</SkillItem>
+                    <SkillItem>CircleCI, Azure, Github Actions</SkillItem>
                 </SkillBlock>
             </Skills>
         </>
