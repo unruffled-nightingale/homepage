@@ -7,4 +7,5 @@ export type ProjectsDataT = {
     githubUrl?: string, 
     url?: string,
     src?: string
+    videoSrc?: string
 }

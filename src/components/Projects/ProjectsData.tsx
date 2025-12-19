@@ -156,6 +156,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
     {
         name: "KINO",
         src: kino,
+        videoSrc: "http://167.172.50.27/homepage/static/kino.mp4",
         desc: KINO_DESC,
         url: "https://kino.unruffled-nightingale.com",
         platforms: ["Desktop"]

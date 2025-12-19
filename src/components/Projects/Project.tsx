@@ -1,28 +1,67 @@
-import {useEffect, useState} from "react";
+import {ReactNode, useEffect, useState} from "react";
 import styled from "styled-components";
 import {GitHubIcon} from "../Icon";
 import {Spinner} from "../Spinner";
 import {ProjectsDataT} from "./types";
 
 
-const GifContainer = styled.div`
-  height: 40%;
+const ProjectContainer = styled.div`
+  height: 100%;
   width: 100%;
-  display: block;
-  outline: 10px solid white;
-  outline-offset: -2px;
-  margin-bottom:30px;
+  display: flex;
+  flex-direction: column;
 `
 
-type GifProps = {
+const MediaContainer = styled.div`
+  flex: 0 0 50%;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  outline: 10px solid white;
+  outline-offset: -2px;
+  margin-bottom: 30px;
+`
+
+type VideoProps = {
     visible?: boolean
 }
 
-const Gif = styled.img<GifProps>`
+const Video = styled.video<VideoProps>`
   opacity: ${props => props.visible ? 1 : 0};
-  max-height: 100%;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: bottom left;
   z-index: 100;
+  transition: opacity 200ms ease-in-out;
+`
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: bottom left;
+`
+
+const DetailsRow = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+`
+
+const NavContainer = styled.div`
+  flex: 0 0 30%;
+  min-width: 0;
+`
+
+const DetailsContainer = styled.div`
+  flex: 0 0 70%;
+  min-width: 0;
+  box-sizing: border-box;
 `
 
 type ProjectTitleProps = {
@@ -32,9 +71,12 @@ type ProjectTitleProps = {
 const ProjectTitle = styled.h1<ProjectTitleProps>`
   margin-top: 0px;
   margin-left: -3px;
-  font-size: 2em;
+  font-size: 1.5em;
   display: inline-block;
   margin-bottom: 0px;
+  font-family: 'Noto Serif JP', serif;
+  letter-spacing: 0.7em;
+
   cursor: ${props => props.url !== undefined ? "pointer" : "auto"};
   color: ${props => props.url !== undefined ? "#007bff" : "black"};
 
@@ -52,27 +94,17 @@ const Icon = styled.div`
 
 const Description = styled.p`
   font-size: 0.8em;
+  font-family: 'STIX Two Text', monospace;
 `
-
-const PlatformContainer = styled.div`
-  display: inline-block;
-  height: 20px;
-`
-
 
 const DescriptionContainer = styled.div`
-  padding-top: 30px;
 `
 
+type ProjectProps = ProjectsDataT & {
+    nav?: ReactNode
+}
 
-const Platform = styled.p`
-  display: inline-block;
-  margin-top: 5px;
-  padding-right: 10px;
-  font-weight: bold;
-`
-
-export const Project = ({name, desc, githubUrl, url, src, platforms}: ProjectsDataT) => {
+export const Project = ({name, desc, githubUrl, url, src, videoSrc, nav}: ProjectProps) => {
 
     const [videoVisible, setVideoVisible] = useState<boolean>(false)
 
@@ -84,43 +116,51 @@ export const Project = ({name, desc, githubUrl, url, src, platforms}: ProjectsDa
         setVideoVisible(false)
     }, [githubUrl])
 
-    const onGifLoaded = () => {
-        console.log("gif loaded")
+    const onVideoLoaded = () => {
         setVideoVisible(true)
     }
 
     return (
-        <>
-            {src ?
-                <GifContainer>
-                    <Gif src={src} alt={name} visible={videoVisible} onLoad={onGifLoaded}/>
-                    <Spinner left={name.startsWith("TREA") || name.startsWith("BORD") ? "8%" : "40%"}/>
-                </GifContainer> : <><br/></>
-            }
-            <ProjectTitle url={url} onClick={onTitleClick}>{name}</ProjectTitle>
-            <div style={{display: "block"}}>
-                {
-                    githubUrl &&
-                    <Icon>
-                        <GitHubIcon url={githubUrl} size={"15px"}/>
-                    </Icon>
-                }
-                {
-                    platforms.length > 0 &&
-                    <PlatformContainer>{platforms.map((p, i) => <Platform
-                        key={i}>{p.toUpperCase()}</Platform>)}</PlatformContainer>
-                }
-            </div>
-            {
-                <DescriptionContainer>{desc.split("\n\n\n").map((e) =>
-                    <>
-                        <br/>
-                        {e.split("\n\n").map((x, i) => <Description key={i}>{x}</Description>)}
-                    </>
-                )
-                }
-                </DescriptionContainer>
-            }
-        </>
+        <ProjectContainer>
+            <MediaContainer>
+                {videoSrc ? (
+                    <Video 
+                        src={videoSrc}
+                        visible={videoVisible} 
+                        onLoadedData={onVideoLoaded}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    />
+                ) : src ? (
+                    <Image src={src} alt={`${name} preview`} />
+                ) : null}
+            </MediaContainer>
+            <DetailsRow>
+                <NavContainer>{nav}</NavContainer>
+                <DetailsContainer>
+                    <ProjectTitle url={url} onClick={onTitleClick}>{name}</ProjectTitle>
+                    <div style={{display: "block"}}>
+                        {
+                            githubUrl &&
+                            <Icon>
+                                <GitHubIcon url={githubUrl} size={"15px"}/>
+                            </Icon>
+                        }
+                    </div>
+                    {
+                        <DescriptionContainer>{desc.split("\n\n\n").map((e) =>
+                            <>
+                                <br/>
+                                {e.split("\n\n").map((x, i) => <Description key={i}>{x}</Description>)}
+                            </>
+                        )
+                        }
+                        </DescriptionContainer>
+                    }
+                </DetailsContainer>
+            </DetailsRow>
+        </ProjectContainer>
     )
 }

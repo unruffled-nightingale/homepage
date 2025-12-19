@@ -7,6 +7,8 @@ type CategoryTitleProps = {
 }
 
 export const CategoryTitle = styled.span<CategoryTitleProps>`
+  font-family: 'Noto Sans Mono', monospace;
+  letter-spacing: 0.7em;
   cursor: pointer;
   font-weight: ${props => props.bold ? "bold" : undefined};
   &:hover {
@@ -16,15 +18,20 @@ export const CategoryTitle = styled.span<CategoryTitleProps>`
 
 const CategoryContainer = styled.div`
   height: 100%;
-  width: 22%;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 12px;
-  margin-left: 3px;
+  width: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  margin-bottom: 10px;
+  text-align: right;
 `
 
 const CategoryElements = styled.div`
-  width: 500%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: fit-content;
+  padding-right: 12px;
 `
 
 
@@ -39,7 +46,7 @@ export const Category = ({ category, onClick, onFocus, children }: CategoryProps
 
   return (
     <CategoryContainer>
-      <CategoryTitle bold={onFocus} onMouseOver={onClick}>{category}</CategoryTitle>
+      <CategoryTitle bold={onFocus} onClick={onClick}>{category}</CategoryTitle>
       {
         onFocus &&
         <CategoryElements>{children}</CategoryElements>

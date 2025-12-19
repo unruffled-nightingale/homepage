@@ -10,6 +10,7 @@ export const PROJECTS: Record<ProjectsT, ReactNode> =
             <Project 
                 key={item.name}
                 src={item.src} 
+                videoSrc={item.videoSrc}
                 name={item.name} 
                 desc={item.desc}  
                 githubUrl={item.githubUrl} 
