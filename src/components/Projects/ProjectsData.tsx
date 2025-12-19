@@ -162,7 +162,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Desktop"]
     },
     {
-        name: "EVENT_STREAM_REGISTRY (WIP)",
+        name: "EVENT STREAM REGISTRY",
         src: esr,
         desc: EVENT_STREAM_REGISTRY_DESC,
         githubUrl: "https://github.com/unruffled-nightingale/event-stream-registry-ui",
@@ -170,7 +170,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Desktop"]
     },
     {
-        name: "FASTAPI_TEMPLATE",
+        name: "FASTAPI TEMPLATE",
         src: undefined,
         desc: FASTAPI_TEMPLATE_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
@@ -186,7 +186,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Desktop", "Mobile"]
     },
     {
-        name: "ROLLING_GALLERY",
+        name: "ROLLING GALLERY",
         src: rollingGallery,
         desc: ROLLING_GALLERY_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/rolling-gallery",
@@ -202,7 +202,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: []
     },
     {
-        name: "PYTHON_TEMPLATE",
+        name: "PYTHON TEMPLATE",
         src: undefined,
         desc: PYTHON_TEMPLATE_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/python-template",
@@ -210,7 +210,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: []
     },
     {
-        name: "EMOJI_CANVAS",
+        name: "EMOJI CANVAS",
         src: emojiCanvas,
         desc: EMOJI_CANVAS_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/fastapi-template",
@@ -218,7 +218,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Desktop"]
     },
     {
-        name: "TREASURE_HUNT_APPLICATION",
+        name: "TREASURE HUNT",
         src: treasureHunt,
         desc: TREASURE_HUNT_APPLICATION_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/treasure_hunt",
@@ -226,7 +226,7 @@ export const PROJECTS_DATA: ProjectsDataT[] = [
         platforms: ["Mobile"]
     },
     {
-        name: "LANGUAGE_WALLPAPER",
+        name: "LANGUAGE WALLPAPER",
         src: wallpaper,
         desc: WALLPAPER_DESC,
         githubUrl: "https://www.github.com/unruffled-nightingale/language_wallpaper",

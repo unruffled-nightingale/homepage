@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components'
 import World from "./components/Ball/World";
 import Controls from "./components/Ball/Controls/Controls";
@@ -11,10 +11,10 @@ import { ExperienceT } from './components/Experience/types';
 import { BrowserView, MobileView } from 'react-device-detect';
 
 import { GitHubIcon, LinkedInIcon } from "./components/Icon";
-import { ArticleList } from "./components/Articles/ArticleList";
-import { CategoryList } from "./components/CategoryList";
-import { EXPERIENCE } from './components/Experience/Experience';
-import { COMPANY_DATA } from './components/Experience/CompanyData';
+import { ArticlesPanel } from "./components/Articles/ArticlesPanel";
+import { TalksPanel } from "./components/Articles/TalksPanel";
+import { ExperiencePanel } from './components/Experience/ExperiencePanel';
+import { BallPanel } from './components/Ball/BallPanel';
 
 const AppContainer = styled.div`
   font-family: 'Noto Sans Mono', monospace;
@@ -22,12 +22,14 @@ const AppContainer = styled.div`
   font-weight: 100;
   width: 100%;
   height: 100%;
+  margin: 50rem;
 
 `
 
 const Header = styled.div`
   display: flex;
   align-items: flex-end;
+  justify-content: flex-end;
   width: 100%;
   margin: 0;
   grid-row: 1;
@@ -47,11 +49,9 @@ const Title = styled.h1`
 
 const Icons = styled.div`
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
   gap: 10px;
-  margin-left: auto; /* push icons + title group to the right */
-  margin-right: 12px; /* small gap between icons and title */
-  padding-bottom: 0.60em; /* align with text baseline */
+  margin-top: 2rem;
 `
 
 const SideBar = styled.div`
@@ -72,6 +72,8 @@ const Overview = styled.div`
   top: 40px;
   height: 700px;
   position: absolute;
+  padding-right: 70px;
+  box-sizing: border-box;
 `
 
 const CategoriesContainer = styled.div`
@@ -80,34 +82,12 @@ const CategoriesContainer = styled.div`
   align-self: start;
 `
 
-const BallControls = styled.p`
-`
-
-
-const DownloadCv = styled.a`
-    position: relative;
-    top: -2px;
-    padding: 0;
-    cursor: pointer;
-    font-size: 0.8em;
-    text-decoration: none;
-    &:hover {
-        font-weight: bold;
-        text-decoration: underline;
-    }
-`
-
-export type CategoryT = "PROJECTS" | "ARTICLES" | "EXPERIENCE" | "BALL" | undefined
+export type CategoryT = "PROJECTS" | "ARTICLES" | "TALKS" | "EXPERIENCE" | "BALL" | undefined
 
 export type OverviewT = ProjectsT | ExperienceT
 
 const GITHUB_URL = "https://github.com/unruffled-nightingale/"
 const LINKEDIN_URL = "https://www.linkedin.com/in/robert-manteghi/"
-
-const OVERVIEWS = EXPERIENCE
-
-const EXPERIENCE_LIST: OverviewT[] = COMPANY_DATA.map(e => e.name)
-EXPERIENCE_LIST.unshift("OVERVIEW")
 
 function App() {
 
@@ -140,33 +120,31 @@ function App() {
           <SideBar>
             <CategoriesContainer>
               <Category onClick={onCategoryClick("PROJECTS")} category={"PROJECTS"} onFocus={category === "PROJECTS"} />
-              <Category onClick={onCategoryClick("EXPERIENCE")} category={"EXPERIENCE"} onFocus={category === "EXPERIENCE"}>
-                <CategoryList categories={EXPERIENCE_LIST} overview={overview} setOverview={setOverview} />
-                <DownloadCv href='/assets/CV - Robert Manteghi.pdf' download>DOWNLOAD CV</DownloadCv>
-
-              </Category>
-              <Category onClick={onCategoryClick("ARTICLES")} category={"ARTICLES"} onFocus={category === "ARTICLES"}>
-                <ArticleList />
-              </Category>
-              <Category onClick={onCategoryClick("BALL")} category={"BALL"} onFocus={category === "BALL"}>
-                <BallControls>Use <b>W A S D</b> to move</BallControls>
-              </Category>
-            </CategoriesContainer>
-            <Header>
-            <Icons>
+              <Category onClick={onCategoryClick("EXPERIENCE")} category={"EXPERIENCE"} onFocus={category === "EXPERIENCE"} />
+              <Category onClick={onCategoryClick("ARTICLES")} category={"ARTICLES"} onFocus={category === "ARTICLES"} />
+              <Category onClick={onCategoryClick("TALKS")} category={"TALKS"} onFocus={category === "TALKS"} />
+              <Category onClick={onCategoryClick("BALL")} category={"BALL"} onFocus={category === "BALL"} />
+              <Icons>
                 <LinkedInIcon url={LINKEDIN_URL} size={"16px"} />
                 <GitHubIcon url={GITHUB_URL} size={"15px"} />
               </Icons>
-                           <Title>ROBERT MANTEGHI</Title>
- 
+            </CategoriesContainer>
+            <Header>
+              <Title>ROBERT MANTEGHI</Title>
             </Header>
           </SideBar>
           <Overview>
             {category === "PROJECTS" ? (
               <ProjectsPanel overview={overview} setOverview={setOverview} />
-            ) : (
-              overview && OVERVIEWS[overview as ExperienceT]
-            )}
+            ) : category === "EXPERIENCE" ? (
+              <ExperiencePanel overview={overview} setOverview={setOverview} />
+            ) : category === "ARTICLES" ? (
+              <ArticlesPanel />
+            ) : category === "TALKS" ? (
+              <TalksPanel />
+            ) : category === "BALL" ? (
+              <BallPanel />
+            ) : null}
           </Overview>
         </AppContainer>
       </BrowserView>

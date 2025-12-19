@@ -54,12 +54,12 @@ const DetailsRow = styled.div`
 `
 
 const NavContainer = styled.div`
-  flex: 0 0 30%;
+  flex: 0 0 25%;
   min-width: 0;
 `
 
 const DetailsContainer = styled.div`
-  flex: 0 0 70%;
+  flex: 0 0 75%;
   min-width: 0;
   box-sizing: border-box;
 `
@@ -86,10 +86,16 @@ const ProjectTitle = styled.h1<ProjectTitleProps>`
   }
 `
 
+const TitleRow = styled.div`
+  padding-right: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+`
+
 const Icon = styled.div`
   display: inline-block;
-  padding-right: 12px;
-  padding-top: 10px;
+  vertical-align: bottom;
 `
 
 const Description = styled.p`
@@ -140,15 +146,14 @@ export const Project = ({name, desc, githubUrl, url, src, videoSrc, nav}: Projec
             <DetailsRow>
                 <NavContainer>{nav}</NavContainer>
                 <DetailsContainer>
-                    <ProjectTitle url={url} onClick={onTitleClick}>{name}</ProjectTitle>
-                    <div style={{display: "block"}}>
-                        {
-                            githubUrl &&
+                    <TitleRow>
+                        <ProjectTitle url={url} onClick={onTitleClick}>{name}</ProjectTitle>
+                        {githubUrl && (
                             <Icon>
                                 <GitHubIcon url={githubUrl} size={"15px"}/>
                             </Icon>
-                        }
-                    </div>
+                        )}
+                    </TitleRow>
                     {
                         <DescriptionContainer>{desc.split("\n\n\n").map((e) =>
                             <>
