@@ -22,8 +22,7 @@ const AppContainer = styled.div`
   font-weight: 100;
   width: 100%;
   height: 100%;
-  margin: 50rem;
-
+  margin: 0;
 `
 
 const Header = styled.div`
@@ -95,7 +94,7 @@ function App() {
   const [overview, setOverview] = useState<OverviewT>()
 
   const [loaded, setLoaded] = useState(false);
-  const [started, setStarted] = useState(true);
+  const [started, setStarted] = useState(false);
   const [movement, setMovement, moved] = useMovement();
 
   const onCategoryClick = (name: CategoryT) => {

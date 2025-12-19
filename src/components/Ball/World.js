@@ -9,7 +9,7 @@ import {memo} from 'react';
 
 
 function World({movement, setLoaded, started}) {
-  const cameraPosition = [-20, 15, 0]
+  const cameraPosition = [15, 10, 0]
   
   return (
       <Canvas style={{height: "100%"}}camera={{ fov: 75, near: 0.1, far: 1000, position: cameraPosition }}>

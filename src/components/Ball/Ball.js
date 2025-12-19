@@ -8,7 +8,7 @@ import { useRef } from 'react';
 function Ball({ movement }) {
 
   const counter = useRef(0);
-  const ballPosRef = useRef([10, 16, 0])
+  const ballPosRef = useRef([6, 16, -8])
   const { moveForward, moveBackward, moveLeft, moveRight } = movement;
   const colorMap = useTexture('assets/ball6.png');
 
